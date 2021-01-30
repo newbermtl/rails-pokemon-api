@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Budget Pokedex</h1>
+  <p> <%=@pokemons_clean.length%> Pokemons in the Pokedex </p>
+
+  <% @pokemons_clean.each do |pokemon| %>
+    <div class="card-product">
+      <img src=<%="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/#{pokemon.id}.png?raw=true"%> />
+      <div class="card-product-infos">
+        <h2><%= pokemon.name %></h2>
+        <p> <%= "Types: #{pokemon.type1} and #{pokemon.type2}  HP: #{pokemon.hp}" %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>
